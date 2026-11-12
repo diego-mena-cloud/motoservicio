@@ -15,6 +15,7 @@ function Form() {
     console.log("Se le va a cobrar: ", precio);
   };
 
+
   return (
     <section className="bg-surface-container-lowest rounded-2xl p-5 border border-border-subtle shadow-sm flex flex-col gap-4">
       <div>

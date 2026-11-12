@@ -7,17 +7,13 @@ import List from "./Orders/List/List";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <div>
+    <div className="min-h-screen flex flex-col bg-surface text-on-surface antialiased selection:bg-orange-100">
       <Header />
-    </div>
-    <div>
-      <Form />
-    </div>
-    <div>
-      <Map />
-    </div>
-    <div>
-      <List />
+      <main className="flex-1 w-full max-w-md mx-auto px-5 py-6 flex flex-col gap-6 pb-24">
+        <Form />
+        <Map />
+        <List />
+      </main>
     </div>
   </StrictMode>,
 );

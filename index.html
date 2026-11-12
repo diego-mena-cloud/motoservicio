@@ -1,10 +1,42 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>motoservicio</title>
+    <meta content="mobile_tab" name="shell-type"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#f8f9ff",
+            "surface": "#f8f9ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f1f4fa",
+            "surface-container": "#e8eef7",
+            "primary": "#ea580c",
+            "primary-dark": "#c2410c",
+            "on-surface": "#0f172a",
+            "secondary": "#64748b",
+            "tertiary": "#059669",
+            "border-subtle": "#e2e8f0"
+          },
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "sans-serif"],
+            mono: ["Space Grotesk", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
   </head>
   <body>
     <div id="root"></div>

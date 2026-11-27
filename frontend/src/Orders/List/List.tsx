@@ -1,4 +1,6 @@
+
 import { useState } from "react";
+import Loading from "../../components/Loading";
 
 function List() {
   const orders = [
@@ -45,9 +47,11 @@ function List() {
       estado: "Entregado",
     },
   ];
+
   const listEstatus: string[] = [...new Set(orders.map((x) => x.estado))];
 
   const [estatus, setEstatus] = useState("");
+  const [loading] = useState(false);
 
   const filteredOrders = estatus
     ? orders.filter((order) => order.estado == estatus)
@@ -74,28 +78,34 @@ function List() {
           ))}
         </select>
       </div>
+
       <div className="flex flex-col gap-2.5" id="orderList">
-        {filteredOrders.map((item) => (
-          <article
-            className="bg-surface-container-lowest rounded-xl p-4 border border-border-subtle shadow-sm flex flex-col gap-2"
-            key={item.nombre}
-          >
-            <div className="flex items-center justify-between">
-              <span className="text-sm font-bold text-on-surface">
-                {item.nombre}
-              </span>
-              <span className="text-sm font-bold text-primary">
-                ${item.precio.toFixed(2)}
-              </span>
-            </div>
-            <div className="flex items-center gap-2 text-xs text-secondary">
-              <span className="px-2 py-0.5 rounded bg-surface-container-low text-on-surface font-medium">
-                {item.categoria}
-              </span>
-              <span className="truncate">{item.direccion} #420</span>
-            </div>
-          </article>
-        ))}
+        {loading ? (
+          <Loading />
+        ) : (
+          filteredOrders.map((item) => (
+            <article
+              className="bg-surface-container-lowest rounded-xl p-4 border border-border-subtle shadow-sm flex flex-col gap-2"
+              key={item.nombre}
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-bold text-on-surface">
+                  {item.nombre}
+                </span>
+                <span className="text-sm font-bold text-primary">
+                  ${item.precio.toFixed(2)}
+                </span>
+              </div>
+
+              <div className="flex items-center gap-2 text-xs text-secondary">
+                <span className="px-2 py-0.5 rounded bg-surface-container-low text-on-surface font-medium">
+                  {item.categoria}
+                </span>
+                <span className="truncate">{item.direccion} #420</span>
+              </div>
+            </article>
+          ))
+        )}
       </div>
     </section>
   );
